@@ -55,3 +55,21 @@ Deploying to heroku
 	>mongodb://admin:admin@ds061395.mongolab.com:61395/quickpost
 	>mongo ds061395.mongolab.com:61395/quickpost -u admin -p admin
 	note : mongolab DB-version should match your local DB-version to connect 
+6. Commit changes
+	git add --all
+	git commit -m "first comit"
+7. Login to Heroku account
+	heroku login - enter uname and password
+	heroku create - which create a heroku app and adds git repository
+	git remote -v - to check heroku git origins
+8. set NODE_ENV to production
+	set NODE_ENV=production
+9. git push heroku master
+10. Allocate resource in heroku for application to run
+	heroku ps:scale web=1
+11. To open app in your browser
+	heroku open
+12. To rename your heroku app
+	heroku apps:rename quickpost
+
+

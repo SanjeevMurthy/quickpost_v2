@@ -7,5 +7,5 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
 });
 
 angular.module('app').controller('mainCtrl', function($scope) {
-    $scope.myVar = "Hello Angular";
+    $scope.myVar = "Hello Prakuuu";
 });
