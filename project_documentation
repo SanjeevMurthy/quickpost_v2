@@ -1,0 +1,57 @@
+Walking Skeleton
+-------------------------
+1. Initialize node - $npm init
+2. install basic dependencies - $npm install express jade --save
+	. new express version
+	> app.use(bodyParser.urlencoded({extended:true})
+	> app.use(bodyParser.json());
+3. initialize git repository - $git init
+4. install bower to install client side dependies - $npm install bower -g/--save-dev
+5. create folder for servers side and client side files - Server and Public folder
+6. install client side dependencies using bower
+	create .bowerrc file
+	bower init
+	bower install jquery --save
+	bower install toastr --save
+	bower install angular angular-resource angular-route --save
+7. set view engine 'jade'
+8. Adding stylus
+	npm install --save stylus
+9. Create a layout
+	create a folder "include" under server
+	create a layout.jade file under /include
+	create scripts.jade file to hold all scripts files needed
+	create site.styl for css
+10. Adding mongodb
+		npm install mongoose/mongodb
+
+
+Installing mongoDb on Ubuntu
+------------------------
+1. sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+2. echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.	d/mongodb-org-3.2.list
+3. sudo apt-get update
+4. sudo apt-get install -y mongodb-org=3.2.1 mongodb-org-server=3.2.1 mongodb-org-shell=3.2.1 mongodb-org-mongos=3.2.	1 mongodb-org-tools=3.2.1
+5. sudo service mongod start
+6. sudo service mongod stop
+7. sudo service mongod restart
+
+
+Deploying to heroku
+------------------------
+
+1. Create heroku account
+2. install heroku toolbelt
+	ubuntu - wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+3. Goto package.json file and add "engines" object
+	"engines":{
+      "node":"4.2.x",  // version should be your current node and npm version
+      "npm":"2.14.x"
+    }
+4. Create Procfile on root directory without any extension
+	web:node server.js - this tells heroku, when it runs it should run this command
+5. Use mongolab for hosting db
+	mongodb://<dbuser>:<dbpassword>@ds061395.mongolab.com:61395/quickpost
+	>mongodb://admin:admin@ds061395.mongolab.com:61395/quickpost
+	>mongo ds061395.mongolab.com:61395/quickpost -u admin -p admin
+	note : mongolab DB-version should match your local DB-version to connect 

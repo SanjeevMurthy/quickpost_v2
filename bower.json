@@ -1,0 +1,26 @@
+{
+  "name": "quickpost",
+  "description": "discussion forum, where user can create,edit and comment on topics",
+  "main": "server.js",
+  "authors": [
+    "sanjeev"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "toastr": "^2.1.2",
+    "angular-resource": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "angular": "^1.5.0"
+  }
+}
