@@ -1,0 +1,20 @@
+<div class="navbar-right" ng-controller="qpNavbarLoginCtrl">
+	<form class="navbar-form" ng-if="!identity.isAuthenticated()">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Email" ng-model="username">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="password" ng-model="password">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="signin(username,password)">Sign In</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right" ng-if="identity.isAuthenticated()">
+    	<li class="dropdown">
+    		<a href="" data-toggle="dropdown">{{identity.currentUser.firstname+" "+identity.currentUser.lastname}}<b class="caret"></b></a>
+    		<ul class="dropdown-menu">
+    			<li><a href=" " ng-click="signout()">Sign out</a> </li>
+    		</ul>
+    	</li>
+    </ul>
+     
+</div>

@@ -73,3 +73,12 @@ Deploying to heroku
 	heroku apps:rename quickpost
 
 
+Authentication
+---------------------
+1. change in routing - when you use multipple sub directories.
+	/partials/:partialsPath to /partials/*
+	>req.params.partialspath to req.params[0]
+2. when you move partials from server side to client side - change routing in server.js
+	from /server/views directory go upto 2 levels - ../../public/app/
+3. For authentication we are using passport module and localStrateg
+	
