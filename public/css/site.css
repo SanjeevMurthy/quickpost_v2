@@ -2,8 +2,8 @@ body {
   padding-top: 61px;
 }
 .navbar-header a.navbar-brand {
-  margin-top: -15px;
-  margin-bottom: -20px;
+  /*margin-top: -15px;
+  margin-bottom: -20px;*/
 }
 .navbar-header a.navbar-brand h6 {
   color: #808080;
