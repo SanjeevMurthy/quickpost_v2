@@ -17,7 +17,8 @@ var userSchema=mongoose.Schema({
 	lastname:String,
 	username:String,
 	salt:String,
-	hashed_pwd:String
+	hashed_pwd:String,
+	roles:[String]
 });
 
 userSchema.methods={
@@ -33,10 +34,10 @@ User.find({}).exec(function(err,collection){
 		var salt,hash;
 		salt=createSalt();
 		hash=hashPwd(salt,'sanju');
-		User.create({firstname:'Sanjeev',lastname:'Murthy',username:'sanju',salt:salt,hashed_pwd:hash});
+		User.create({firstname:'Sanjeev',lastname:'Murthy',username:'sanju',salt:salt,hashed_pwd:hash,roles:['admin']});
 		salt=createSalt();
 		hash=hashPwd(salt,'pooja');
-		User.create({firstname:'Pooja',lastname:'Gurubasappa',username:'pooja',salt:salt,hashed_pwd:hash});
+		User.create({firstname:'Pooja',lastname:'Gurubasappa',username:'pooja',salt:salt,hashed_pwd:hash,roles:[]});
 	}
 });
 

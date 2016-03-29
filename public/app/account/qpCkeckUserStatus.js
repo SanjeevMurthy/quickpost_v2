@@ -1,4 +1,4 @@
-angular.module('app').factory('qpCkeckUserStatus',function($http,$q,qpIdentity) {
+angular.module('app').factory('qpCkeckUserStatus',function($http,$q,qpIdentity,qpUserService) {
 	return {
 		isLoggedIn : function(){
 
@@ -6,7 +6,9 @@ angular.module('app').factory('qpCkeckUserStatus',function($http,$q,qpIdentity) 
 			$http.get('/isloggedin').then(function(response){
 				if(response.data.loggedIn){
 					debugger;
-					qpIdentity.currentUser=response.data.user;
+					var currentuser=new qpUserService();
+					angular.extend(currentuser,response.data.user);
+					qpIdentity.currentUser=currentuser;
 					defer.resolve(true);
 				}else{
 					defer.resolve(false);

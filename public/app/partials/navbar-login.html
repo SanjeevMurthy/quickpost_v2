@@ -12,6 +12,7 @@
     	<li class="dropdown">
     		<a href="" data-toggle="dropdown">{{identity.currentUser.firstname+" "+identity.currentUser.lastname}}<b class="caret"></b></a>
     		<ul class="dropdown-menu">
+                <li ng-if="identity.currentUser.isAdmin()"><a href="" href="/admin/user">User Admin</a></li>
     			<li><a href=" " ng-click="signout()">Sign out</a> </li>
     		</ul>
     	</li>
